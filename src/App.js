@@ -1,24 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import LoginForm from './components/Login';
+import SearchPage from './components/Search';
+import DatasetPage from './components/DatasetPage';
+import VisualizePage from './components/VisualizePage';
+import GisVisualizationPage from './components/GisVisualizationPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/Login" element={<LoginForm />} />
+        <Route path="/Search" element={<SearchPage />} />
+        <Route path="/dataset/:datasetTitle" element={<DatasetPage />} /> 
+        <Route path="/visualize/:datasetTitle" element={<VisualizePage />} />
+        <Route path="/gis/:datasetTitle" element={<GisVisualizationPage />} />
+        <Route path="/" element={<Navigate to="/login" replace />} />
+      </Routes>
+    </Router>
   );
 }
 

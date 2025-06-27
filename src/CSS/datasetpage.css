@@ -1,0 +1,242 @@
+/* Dataset page wrapper */
+.dataset-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Dataset page container */
+.dataset-page-container {
+    max-width: 85vw;
+    width: 100%;
+    /* padding: 10px; */
+    background-color: #ffffff;
+    /* border-radius: 15px; */
+    overflow: hidden;
+}
+
+/* Title styling */
+h1 {
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+}
+
+/* Buttons container */
+.dataset-buttons {
+    display: flex;
+    justify-content: center;  /* Center the buttons */
+    gap: 20px;  /* Add space between buttons */
+    margin-bottom: 20px;
+  }
+  
+  /* Button styling */
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    min-width: 150px;  /* Ensure buttons are not too small */
+  }
+  
+  /* Filter button */
+  .filter-button {
+    background-color: #4caf50;  /* Green */
+    color: white;
+  }
+  
+  .filter-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Export button */
+  .export-button {
+    background-color: #008cba;  /* Blue */
+    color: white;
+  }
+  
+  .export-button:hover {
+    background-color: #007bb5;
+  }
+  
+  /* Visualize button */
+  .visualize-button {
+    background-color: #f39c12;  /* Orange */
+    color: white;
+  }
+  
+  .visualize-button:hover {
+    background-color: #e67e22;
+  }
+  
+
+
+/* Table container for horizontal scroll */
+.dataset-table-container {
+    width: 100%;
+    overflow-x: auto;  /* Allow horizontal scrolling */
+    -webkit-overflow-scrolling: touch;  /* Smooth scrolling on iOS devices */
+    padding-bottom: 20px;  /* Space for horizontal scroll */
+}
+
+/* Table wrapper with box shadow */
+.dataset-table-wrapper {
+    min-width: 100%;
+    /* border-color: #832e2e; */
+    overflow-x: auto;  /* Enable scrolling */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Box shadow applied only to the table */
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    box-shadow: none;  /* Ensure no box-shadow on table itself */
+}
+
+/* Table header */
+th {
+    padding: 12px 20px;
+    background-color: #3fa6d6;  /* Light blue background for headers */
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+}
+
+/* Table cells */
+td {
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid #727272;  /* Light border */
+    color: #555;
+}
+
+/* Zebra striping for rows */
+tbody tr:nth-child(even) {
+    background-color: #fcf6f6;  /* Light gray for even rows */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f5f4f4;  /* White for odd rows */
+}
+
+/* Hover effect on rows */
+tbody tr:hover {
+    background-color: #e0f7fa;  /* Light blue hover effect */
+    cursor: pointer;
+}
+
+/* Styling for scrollbars (optional) */
+.dataset-table-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.dataset-table-container::-webkit-scrollbar-thumb {
+    background: #3fa6d6;
+    border-radius: 4px;
+}
+
+.dataset-table-container::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+/* Optional: Border around the table */
+table {
+    border: 1px solid #ddd;
+    /* border-radius: 10px; */
+    overflow: hidden;
+    border-color: #727272;
+}
+/* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  /* Modal content */
+  .modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;  /* Ensure that close button is positioned relative to this */
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  /* Close button */
+  .popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+    z-index: 1100;  /* Make sure it's above the modal content */
+  }
+  
+  .popup-close:hover {
+    color: #f44336;  /* Red color on hover */
+  }
+  
+  /* Popup title */
+  .modal-content h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  /* Popup message */
+  .modal-content p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* FadeIn animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* SlideUp animation */
+  @keyframes slideUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
